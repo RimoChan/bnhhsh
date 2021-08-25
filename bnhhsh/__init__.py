@@ -1,5 +1,6 @@
 import json
 import pickle
+import tempfile
 from pathlib import Path
 
 here = Path(__file__).parent
@@ -35,10 +36,10 @@ def 破处():
     n = max(词桶)
     for i in range(1, n+1):
         词桶.setdefault(i, {})
-    with open(here/'data/词桶.pkl', 'wb') as f:
+    with open(Path(tempfile.gettempdir())/'bnhhsh词桶.pkl', 'wb') as f:
         pickle.dump(词桶, f)
 
-q = Path(here/'data/词桶.pkl')
+q = Path(Path(tempfile.gettempdir())/'bnhhsh词桶.pkl')
 if not q.is_file():
     破处()
 with open(q, 'rb') as f:
