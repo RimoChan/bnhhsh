@@ -46,7 +46,7 @@ with open(q, 'rb') as f:
 
 n = max(词桶)
 
-def dp(target):
+def yndp(target):
     代价 = {-1: 0}
     记录 = {-1: []}
     for x in range(len(target)):
@@ -64,9 +64,10 @@ def dp(target):
         if 代价[x-1]+1 < 代价[x]:
             代价[x] = 代价[x-1]+1
             记录[x] = 记录[x-1].copy()
-    # print(代价)
-    # print(记录)
     target = [*target]
     for a, b, c in 记录[len(target)-1][::-1]:
         target[a:b] = c
-    return ''.join(target)
+    return ''.join(target), 代价[len(target)-1]
+
+def dp(target):
+    return yndp(target)[0]
