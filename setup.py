@@ -3,7 +3,7 @@ import setuptools
 
 setuptools.setup(
     name='bnhhsh',
-    version='1.1.0',
+    version='1.1.1',
     author='RimoChan',
     author_email='the@librian.net',
     description='bnhhsh',

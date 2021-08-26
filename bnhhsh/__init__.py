@@ -28,7 +28,9 @@ def 破处():
         常用汉字 = json.load(f)
     with open(here/'data/现代汉语常用词表.json', encoding='utf8') as f:
         现代汉语常用词表 = json.load(f)
-    词桶 = {}
+    词桶 = {
+        1: {'i': ['爱', 0.1], 'u': ['幼', 0.1]}
+    }
     丢(词桶, 色情词库, 0.001)
     丢(词桶, 莉沫词库, 0.01)
     丢(词桶, 常用汉字, 0.11)
@@ -36,10 +38,10 @@ def 破处():
     n = max(词桶)
     for i in range(1, n+1):
         词桶.setdefault(i, {})
-    with open(Path(tempfile.gettempdir())/'bnhhsh词桶.pkl', 'wb') as f:
+    with open(Path(tempfile.gettempdir())/'bnhhsh词桶v1.1.1.pkl', 'wb') as f:
         pickle.dump(词桶, f)
 
-q = Path(Path(tempfile.gettempdir())/'bnhhsh词桶.pkl')
+q = Path(Path(tempfile.gettempdir())/'bnhhsh词桶v1.1.1.pkl')
 if not q.is_file():
     破处()
 with open(q, 'rb') as f:
