@@ -77,5 +77,3 @@ def yndp(target):
 
 def dp(target):
     return yndp(target)[0]
-
-print(yndp('y'))
