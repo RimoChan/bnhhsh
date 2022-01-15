@@ -21,7 +21,9 @@ def 破处():
             else:
                 w[k] = [f'{i}', 痛苦]
     with open(here/'data/色情词库.json', encoding='utf8') as f:
-        色情词库 = json.load(f)
+        色情词库 = json.load(f)    
+    with open(here/'data/色情词库_数据增强.json', encoding='utf8') as f:
+        色情词库_数据增强 = json.load(f)
     with open(here/'data/莉沫词库.json', encoding='utf8') as f:
         莉沫词库 = json.load(f)
     with open(here/'data/常用汉字.json', encoding='utf8') as f:
@@ -33,15 +35,16 @@ def 破处():
     }
     丢(词桶, 色情词库, 0.001)
     丢(词桶, 莉沫词库, 0.01)
+    丢(词桶, 色情词库_数据增强, 0.1)
     丢(词桶, 常用汉字, 0.11)
     丢(词桶, 现代汉语常用词表, 0.2)
     n = max(词桶)
     for i in range(1, n+1):
         词桶.setdefault(i, {})
-    with open(Path(tempfile.gettempdir())/'bnhhsh词桶v1.1.1.pkl', 'wb') as f:
+    with open(Path(tempfile.gettempdir())/'bnhhsh词桶v1.2.1.pkl', 'wb') as f:
         pickle.dump(词桶, f)
 
-q = Path(Path(tempfile.gettempdir())/'bnhhsh词桶v1.1.1.pkl')
+q = Path(Path(tempfile.gettempdir())/'bnhhsh词桶v1.2.1.pkl')
 if not q.is_file():
     破处()
 with open(q, 'rb') as f:
@@ -74,3 +77,5 @@ def yndp(target):
 
 def dp(target):
     return yndp(target)[0]
+
+print(yndp('y'))
