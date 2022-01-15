@@ -10,7 +10,7 @@ setuptools.setup(
     url='https://github.com/RimoChan/bnhhsh',
     packages=['bnhhsh'],
     package_data={
-        'bnhhsh': ['data/色情词库.json', 'data/莉沫词库.json', 'data/常用汉字.json', 'data/现代汉语常用词表.json'],
+        'bnhhsh': ['data/色情词库.json', 'data/色情词库_数据增强.json', 'data/莉沫词库.json', 'data/常用汉字.json', 'data/现代汉语常用词表.json'],
     },
     classifiers=[
         'Programming Language :: Python :: 3',
